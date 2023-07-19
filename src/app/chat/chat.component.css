@@ -1,0 +1,180 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+#main-container {
+  justify-content: center;
+  height: 100vh;
+  background-color: #222;
+  color: #222;
+  overflow: hidden;
+}
+/* -------------------------------------------------- */
+
+#room-title-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  border-radius: 5px;
+  /*width: 80%;*/
+  height: 5%;
+  margin: 2vh auto auto;
+}
+
+#room-id-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 5vh ;
+}
+
+#delete-button,
+#add-button,
+#back-button {
+  border: none;
+  background-color: transparent;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 2.5vh;
+}
+
+
+#back-button {
+  margin-right: auto;
+  margin-left: 1vw;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#back-button:hover {
+  background-color: #ed4242; /* Red */
+  color: #fff;
+}
+
+#back-button:active {
+  background-color: #990000; /* Darker red */
+  color: #fff;
+}
+
+
+#delete-button {
+  margin-left: auto;
+  margin-right: 1vw;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#delete-button:hover {
+  background-color: #ed4242; /* Red */
+  color: #fff;
+}
+
+#delete-button:active {
+  background-color: #990000; /* Darker red */
+  color: #fff;
+}
+
+#add-button {
+  margin-right: 2px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#add-button:hover {
+  background-color: #059005; /* Red */
+  color: #fff;
+}
+
+#add-button:active {
+  background-color: #006600; /* Darker red */
+  color: #fff;
+}
+/* ---------------------------------------------------- */
+
+
+#chat-container {
+  /*padding: 2vh;*/
+  margin-bottom: 1vh;
+  height: 84vh;
+  overflow-y: auto;
+  width: 95vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*.message {*/
+/*  display: flex;*/
+/*  margin-bottom: 1vh;*/
+/*}*/
+
+/*.incoming {*/
+/*  justify-content: flex-start;*/
+/*}*/
+
+/*.outgoing {*/
+/*  justify-content: flex-end;*/
+/*}*/
+
+/*.message-content {*/
+/*  background-color: #333;*/
+/*  padding: 1vh 2vh;*/
+/*  border-radius: 20px;*/
+/*  min-width: 30%;*/
+/*  max-width: 60%;*/
+/*}*/
+
+/*.message-text {*/
+/*  font-size: 2vh;*/
+/*  word-wrap: break-word;*/
+/*}*/
+
+/*.message-name {*/
+/*  font-size: 1.5vh;*/
+/*  color: #aaa;*/
+/*}*/
+
+/* ---------------------------------------------------- */
+
+.message-input-container {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  background-color: #222;
+  width: 95vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#message-input {
+  font-size: 3vh;
+  flex-grow: 1;
+  padding: 0.5vw;
+  border: 0.2vw solid #555;
+  border-radius: 2vw;
+  color: #fff;
+  background-color: #222;
+  height: 4vh;
+}
+
+
+#send-button {
+  margin-left: 8px;
+  padding: 1vh 2vh;
+  border: none;
+  border-radius: 8px;
+  background-color: #0084ff;
+  color: #fff;
+  font-weight: bold;
+  font-size: 2.8vh;
+}
+
+#send-button:hover {
+  background-color: #005cbf;
+}
+
+

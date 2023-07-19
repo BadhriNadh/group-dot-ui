@@ -1,0 +1,11 @@
+<!-- home.component.html -->
+<div class="container">
+    <h1>Join Chat</h1>
+    <input type="text" id="name-input" placeholder="Enter your name" #name>
+    <br>
+    <input type="text" id="room-id-input" placeholder="Enter room ID" #roomId>
+    <br>
+    <button id="join-button" (click)="joinChat(name.value, roomId.value)">Join</button>
+    <br>
+    <button id="create-button" (click)="createChat(name.value)">Create</button>
+</div>

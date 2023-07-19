@@ -1,0 +1,31 @@
+.message {
+  display: flex;
+  margin-bottom: 1vh;
+}
+
+.incoming {
+  justify-content: flex-start;
+}
+
+.outgoing {
+  justify-content: flex-end;
+}
+
+.message-content {
+  background-color: #333;
+  padding: 1vh 2vh;
+  border-radius: 20px;
+  min-width: 30%;
+  max-width: 60%;
+}
+
+.message-text {
+  font-size: 2vh;
+  word-wrap: break-word;
+  color: white;
+}
+
+.message-name {
+  font-size: 1.5vh;
+  color: #aaa;
+}

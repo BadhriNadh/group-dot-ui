@@ -1,0 +1,19 @@
+<div id="main-container">
+  <div id="room-title-card">
+    <button id="back-button"(click)="homePage()" >Back</button>
+    <h1 id="room-id-text"></h1>
+<!--    <button id="delete-button">Delete</button>-->
+    <button id="add-button" (click)="toggleComponent()" >Invite</button>
+  </div>
+
+  <div id="chat-container">
+    <!-- Existing messages will be displayed here -->
+  </div>
+
+  <div class="message-input-container">
+    <input id="message-input" placeholder="Type a message...">
+    <button id="send-button">Send</button>
+  </div>
+
+  <app-invitecard *ngIf="isOpen"></app-invitecard>
+</div>
