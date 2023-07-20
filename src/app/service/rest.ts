@@ -4,7 +4,9 @@ import {Observable} from "rxjs";
 import { Room } from '../interface/Room';
 import {Chat} from "../interface/Chat";
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class Rest{
   host = "http://localhost:8080/";
   constructor(private http: HttpClient) {

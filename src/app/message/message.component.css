@@ -5,17 +5,18 @@
 
 .incoming {
   justify-content: flex-start;
+  margin-left: 3vw;
 }
 
 .outgoing {
   justify-content: flex-end;
+  margin-right: 3vw;
 }
 
 .message-content {
   background-color: #333;
   padding: 1vh 2vh;
   border-radius: 20px;
-  min-width: 30%;
   max-width: 60%;
 }
 

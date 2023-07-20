@@ -1,9 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewChecked, Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {Rest} from "../service/rest";
 import {Ping} from "../interface/Ping";
 import {MessageComponent} from "../message/message.component";
 import { ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
+import {StompService} from "../stomp/stomp.service";
+import {Subscription} from "rxjs";
+import { Message } from '@stomp/stompjs';
+import { Client } from '@stomp/stompjs';
 
 
 @Component({
@@ -11,21 +15,35 @@ import { ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
-export class ChatComponent implements OnInit{
+export class ChatComponent implements OnInit, AfterViewChecked{
   isOpen: boolean = false;
-  name: string | null = null
-  roomId: string | null = null
-  chatContainer: HTMLElement | null = null;
-
-  constructor(private router: Router, private rest: Rest, private resolver: ComponentFactoryResolver, private viewContainerRef: ViewContainerRef) { }
+  name?: string
+  roomId?: string
+  chatContainer?: HTMLElement
+  private topicSubscription!: Subscription;
+  private stompClient?: Client;
+  constructor(
+    private router: Router,
+    private rest: Rest,
+    private resolver: ComponentFactoryResolver,
+    private viewContainerRef: ViewContainerRef,
+    private stompService: StompService
+  ) { }
 
   ngOnInit(): void {
-     this.roomId = localStorage.getItem("roomId") as string
-     this.name = localStorage.getItem("name") as string
-     this.chatContainer = document.getElementById("chat-container") as HTMLElement;
-     this.getChat(this.roomId )
+     this.setVariables()
+     this.getChat()
+     //this.connect()
+     this.subscription()
+  }
+
+  setVariables(): void{
+    this.roomId = localStorage.getItem("roomId") as string
+    this.name = localStorage.getItem("name") as string
+    this.chatContainer = document.getElementById("chat-container") as HTMLElement;
   }
   homePage() {
+    this.ngOnDestroy()
     this.router.navigate([''])
   }
 
@@ -33,9 +51,9 @@ export class ChatComponent implements OnInit{
     this.isOpen = true;
   }
 
-  getChat(roomId: string) {
-    if (roomId ) {
-      this.rest.sendGetRequest(roomId).subscribe(
+  getChat() {
+    if (this.roomId ) {
+      this.rest.sendGetRequest(this.roomId).subscribe(
         (response) => {
           if(response.roomId) {
             response.pings.forEach((ping: Ping) => {
@@ -68,6 +86,38 @@ export class ChatComponent implements OnInit{
 
     if (this.chatContainer) {
       this.chatContainer.appendChild(componentRef.location.nativeElement);
+      this.chatContainer.scrollTop = this.chatContainer.scrollHeight;
     }
+  }
+
+  ngAfterViewChecked() {
+    if (this.chatContainer) {
+      this.chatContainer.scrollTop = this.chatContainer.scrollHeight;
+    }
+  }
+
+  subscription() {
+    this.topicSubscription = this.stompService
+      .watch('/pawsome-ui/receive/' + this.roomId)
+      .subscribe((message:Message) => {
+        const receivedPing: Ping = JSON.parse(message.body);
+        this.addMessage(receivedPing);
+      });
+  }
+
+  ngOnDestroy() {
+    this.topicSubscription.unsubscribe();
+  }
+
+  onSendMessage(message: HTMLInputElement) {
+    const ping: Ping = {
+      senderName: this.name!,
+      message: message.value,
+      language: 'en',
+      timeStamp: new Date().toISOString(),
+    };
+
+    this.stompService.publish({ destination: '/pawsome-api/send/' + this.roomId, body: JSON.stringify(ping) });
+    message.value = "";
   }
 }

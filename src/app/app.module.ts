@@ -6,9 +6,8 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import {RouterOutlet} from "@angular/router";
+import { RouterOutlet } from "@angular/router";
 import { ChatComponent } from './chat/chat.component';
-import {Rest} from "./service/rest";
 import { InvitecardComponent } from './invitecard/invitecard.component';
 import { MessageComponent } from './message/message.component';
 
@@ -27,7 +26,7 @@ import { MessageComponent } from './message/message.component';
         HttpClientModule,
         CommonModule
     ],
-  providers: [Rest],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
