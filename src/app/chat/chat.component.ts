@@ -98,7 +98,7 @@ export class ChatComponent implements OnInit, AfterViewChecked{
 
   subscription() {
     this.topicSubscription = this.stompService
-      .watch('/pawsome-ui/receive/' + this.roomId)
+      .watch('/group-dots-ui/receive/' + this.roomId)
       .subscribe((message:Message) => {
         const receivedPing: Ping = JSON.parse(message.body);
         this.addMessage(receivedPing);
@@ -117,7 +117,7 @@ export class ChatComponent implements OnInit, AfterViewChecked{
       timeStamp: new Date().toISOString(),
     };
 
-    this.stompService.publish({ destination: '/pawsome-api/send/' + this.roomId, body: JSON.stringify(ping) });
+    this.stompService.publish({ destination: '/group-dots-api/send/' + this.roomId, body: JSON.stringify(ping) });
     message.value = "";
   }
 }
