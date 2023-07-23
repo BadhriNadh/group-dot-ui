@@ -20,6 +20,7 @@
     "@angular/router": "^16.1.0",
     "@stomp/rx-stomp": "^2.0.0",
     "@stomp/stompjs": "^7.0.0",
+    "axios": "^1.4.0",
     "rxjs": "~7.8.0",
     "sockjs-client": "^1.6.1",
     "stompjs": "^2.3.3",

@@ -1,5 +1,6 @@
+
 export const environment = {
-  apiUrl: '',
-  socketUrl: '',
-  emailUrl: '',
+  apiUrl: '' ,
+  socketUrl: '' ,
+  emailUrl: '' ,
 };

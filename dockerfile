@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . .
 
+RUN node download-config.js
+
 RUN npm run build -- --configuration=production
 
 FROM nginx:1.25-alpine
