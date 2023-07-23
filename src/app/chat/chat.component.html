@@ -9,9 +9,18 @@
     <!-- Existing messages will be displayed here -->
   </div>
 
+  <div class="dropdown-container">
+    <select class="dropdown" #languageSelect >
+      <option value="te">తెలుగు</option>
+      <option value="fr">Français</option>
+      <option value="hi">हिंदी</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+
   <div class="message-input-container">
     <input id="message-input" placeholder="Type a message..." #message>
-    <button id="send-button" (click)="onSendMessage(message)">Send</button>
+    <button id="send-button" (click)="onSendMessage(message, languageSelect.value)">Send</button>
   </div>
 
   <app-invitecard *ngIf="isOpen"></app-invitecard>

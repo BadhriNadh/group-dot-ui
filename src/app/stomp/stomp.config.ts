@@ -1,8 +1,9 @@
 import { RxStompConfig } from '@stomp/rx-stomp';
+import {environment} from "../../environments/environment";
 
 export const StompConfig: RxStompConfig = {
 
-  brokerURL: 'ws://localhost:8080/group-dots-websocket',
+  brokerURL: environment.socketUrl,
 
   // connectHeaders: {},
   //

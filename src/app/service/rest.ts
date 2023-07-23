@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import {Observable} from "rxjs";
 import { Room } from '../interface/Room';
 import {Chat} from "../interface/Chat";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root',
 })
 export class Rest{
-  host = "http://localhost:8080/";
+  host = environment.apiUrl;
   constructor(private http: HttpClient) {
   }
   sendJoinRequest( roomId: string): Observable<Room> {

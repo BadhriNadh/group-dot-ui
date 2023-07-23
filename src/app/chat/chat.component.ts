@@ -7,7 +7,6 @@ import { ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
 import {StompService} from "../stomp/stomp.service";
 import {Subscription} from "rxjs";
 import { Message } from '@stomp/stompjs';
-import { Client } from '@stomp/stompjs';
 
 
 @Component({
@@ -21,7 +20,7 @@ export class ChatComponent implements OnInit, AfterViewChecked{
   roomId?: string
   chatContainer?: HTMLElement
   private topicSubscription!: Subscription;
-  private stompClient?: Client;
+
   constructor(
     private router: Router,
     private rest: Rest,
@@ -33,7 +32,6 @@ export class ChatComponent implements OnInit, AfterViewChecked{
   ngOnInit(): void {
      this.setVariables()
      this.getChat()
-     //this.connect()
      this.subscription()
   }
 
@@ -109,15 +107,17 @@ export class ChatComponent implements OnInit, AfterViewChecked{
     this.topicSubscription.unsubscribe();
   }
 
-  onSendMessage(message: HTMLInputElement) {
-    const ping: Ping = {
-      senderName: this.name!,
-      message: message.value,
-      language: 'en',
-      timeStamp: new Date().toISOString(),
-    };
+  onSendMessage(message: HTMLInputElement, language: string) {
+    if(message) {
+      const ping: Ping = {
+        senderName: this.name!,
+        message: message.value,
+        language: language,
+        timeStamp: new Date(),
+      };
 
-    this.stompService.publish({ destination: '/group-dots-api/send/' + this.roomId, body: JSON.stringify(ping) });
-    message.value = "";
+      this.stompService.publish({destination: '/group-dots-api/send/' + this.roomId, body: JSON.stringify(ping)});
+      message.value = "";
+    }
   }
 }
