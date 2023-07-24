@@ -9,6 +9,8 @@ import {Rest} from "../service/rest";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+
+  isOpen: boolean = false;
   constructor(private router: Router, private rest: Rest) { }
 
   joinChat(name: string, roomId: string) {
@@ -57,5 +59,9 @@ export class HomeComponent {
         }
       );
     }
+  }
+
+  toggleComponent() {
+    this.isOpen = true;
   }
 }

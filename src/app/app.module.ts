@@ -10,6 +10,7 @@ import { RouterOutlet } from "@angular/router";
 import { ChatComponent } from './chat/chat.component';
 import { InvitecardComponent } from './invitecard/invitecard.component';
 import { MessageComponent } from './message/message.component';
+import { SubscribecardComponent } from './subscribecard/subscribecard.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MessageComponent } from './message/message.component';
     HomeComponent,
     ChatComponent,
     InvitecardComponent,
-    MessageComponent
+    MessageComponent,
+    SubscribecardComponent
   ],
     imports: [
         BrowserModule,
