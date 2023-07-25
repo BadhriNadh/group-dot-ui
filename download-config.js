@@ -16,7 +16,7 @@ async function downloadFile(url, directory, filename) {
   }
 }
 
-const fileUrl = 'https://storage.cloud.google.com/group-dots-ui-config/environment.ts';
+const fileUrl = 'https://storage.googleapis.com/group-dots-congig/environment.ts';
 const downloadDirectory = './src/environments';
 const fileName = 'environment.ts';
 
