@@ -20,4 +20,5 @@ const fileUrl = 'https://storage.cloud.google.com/group-dots-ui-config/environme
 const downloadDirectory = './src/environments';
 const fileName = 'environment.ts';
 
+
 downloadFile(fileUrl, downloadDirectory, fileName);
