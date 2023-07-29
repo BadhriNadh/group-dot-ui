@@ -10,6 +10,8 @@ import {environment} from "../../environments/environment";
 })
 export class Rest{
   host = environment.apiUrl;
+
+  emailhost = environment.emailUrl;
   constructor(private http: HttpClient) {
   }
   sendJoinRequest( roomId: string): Observable<Room> {
@@ -22,5 +24,13 @@ export class Rest{
 
   sendGetRequest(name: string): Observable<Chat> {
     return this.http.get<Chat>(this.host+'room/get/'+name)
+  }
+
+  sendSubEmail(sub: any): Observable<any>{
+    return this.http.post(this.emailhost+'/production/subscribe', sub)
+  }
+
+  sendInviteEmail(invite: any): Observable<any>{
+    return this.http.post(this.emailhost+'/production/invite', invite)
   }
 }

@@ -1,6 +1,6 @@
 
 export const environment = {
-  apiUrl: 'https://group-dots-api-htnf5ny6tq-wl.a.run.app/' ,
-  socketUrl: 'wss://group-dots-api-htnf5ny6tq-wl.a.run.app/group-dots-websocket' ,
-  emailUrl: '' ,
+  apiUrl: 'http://54.92.214.26:443/' ,
+  socketUrl: 'ws://54.92.214.26:443/group-dots-websocket' ,
+  emailUrl: 'https://z5iomylrx2.execute-api.us-east-1.amazonaws.com' ,
 };
