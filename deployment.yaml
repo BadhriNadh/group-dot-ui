@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: group-dot-ui
-          image: us-west2-docker.pkg.dev/$PROJECT_ID/group-dots-ui/group-dots-ui:latest
+          image: us-west2-docker.pkg.dev/group-dots/group-dots-ui/group-dots-ui:latest
           ports:
             - containerPort: 80
 ---
