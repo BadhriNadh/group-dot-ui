@@ -15,15 +15,15 @@ export class Rest{
   constructor(private http: HttpClient) {
   }
   sendJoinRequest( roomId: string): Observable<Room> {
-    return this.http.get<Room>(this.host+'room/join/'+roomId );
+    return this.http.get<Room>(this.host+'/room/join/'+roomId );
   }
 
   sendCreateRequest(name: string): Observable<Room> {
-    return this.http.get<Room>(this.host+'room/create/'+name)
+    return this.http.get<Room>(this.host+'/room/create/'+name)
   }
 
   sendGetRequest(name: string): Observable<Chat> {
-    return this.http.get<Chat>(this.host+'room/get/'+name)
+    return this.http.get<Chat>(this.host+'/room/get/'+name)
   }
 
   sendSubEmail(sub: any): Observable<any>{
