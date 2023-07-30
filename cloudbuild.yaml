@@ -12,4 +12,4 @@ steps:
       - 'deployment.yaml'
       - '--project=$PROJECT_ID'
       - '--location=us-west2-a'
-      - '--cluster=cluster-1'
+      - '--cluster=group-dots-ui'
