@@ -1,9 +1,9 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: group-dot-api
+  name: group-dot-ui
 spec:
-  replicas: 1 # Set the desired number of replicas for your application
+  replicas: 1
   selector:
     matchLabels:
       app: group-dot
@@ -13,7 +13,20 @@ spec:
         app: group-dot
     spec:
       containers:
-        - name: group-dot-api
+        - name: group-dot-ui
           image: us-west2-docker.pkg.dev/$PROJECT_ID/group-dots-ui/group-dots-ui:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: group-dot-ui
+spec:
+  selector:
+    app: group-dot
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
