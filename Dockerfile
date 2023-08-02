@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-RUN node download-config.js
+#RUN node download-config.js
 
 RUN npm run build -- --configuration=production
 

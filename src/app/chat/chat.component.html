@@ -2,21 +2,29 @@
   <div id="room-title-card">
     <button id="back-button"(click)="homePage()" >Back</button>
     <h1 id="room-id-text">{{roomId}}</h1>
-    <button id="add-button" (click)="toggleComponent()" >Invite</button>
+<!--    <button id="add-button" (click)="toggleComponent()" >Invite</button>-->
+    <div class="dropdown-container">
+      <select class="dropdown" #languageSelect >
+        <option value="te">తెలుగు</option>
+        <option value="fr">Français</option>
+        <option value="hi">हिंदी</option>
+        <option value="en">English</option>
+      </select>
+    </div>
   </div>
 
   <div id="chat-container">
     <!-- Existing messages will be displayed here -->
   </div>
 
-  <div class="dropdown-container">
-    <select class="dropdown" #languageSelect >
-      <option value="te">తెలుగు</option>
-      <option value="fr">Français</option>
-      <option value="hi">हिंदी</option>
-      <option value="en">English</option>
-    </select>
-  </div>
+<!--  <div class="dropdown-container">-->
+<!--    <select class="dropdown" #languageSelect >-->
+<!--      <option value="te">తెలుగు</option>-->
+<!--      <option value="fr">Français</option>-->
+<!--      <option value="hi">हिंदी</option>-->
+<!--      <option value="en">English</option>-->
+<!--    </select>-->
+<!--  </div>-->
 
   <div class="message-input-container">
     <input id="message-input" placeholder="Type a message..." #message>

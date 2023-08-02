@@ -8,8 +8,8 @@
     <button id="join-button" (click)="joinChat(name.value, roomId.value)">Join</button>
     <br>
     <button id="create-button" (click)="createChat(name.value)">Create</button>
-    <br>
-    <button id="subscribe-button" (click)="toggleComponent()" >Subscribe</button>
+<!--    <br>-->
+<!--    <button id="subscribe-button" (click)="toggleComponent()" >Subscribe</button>-->
 
     <app-subscribecard *ngIf="isOpen"></app-subscribecard>
 </div>
