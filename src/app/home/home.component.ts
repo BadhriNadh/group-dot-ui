@@ -15,8 +15,8 @@ export class HomeComponent {
   constructor(private router: Router, private rest: Rest) { }
 
   joinChat(name: string, roomId: string) {
-    this.isLoading = true
     if (name && roomId) {
+      this.isLoading = true
       this.rest.sendJoinRequest(roomId).subscribe(
         (response) => {
           if (roomId === response.roomId) {
@@ -33,18 +33,17 @@ export class HomeComponent {
             console.error("An error occurred:", error);
         },
         () => {
-          this.isOpen = true
+          this.isLoading=false
         }
       );
     } else {
       this.isOpen = true
     }
-    this.isLoading=false
   }
 
   createChat(name: string, roomId: string) {
-    this.isLoading=true
     if (name && !roomId) {
+      this.isLoading=true
       this.rest.sendCreateRequest(name).subscribe(
         (response) => {
           if(response.roomId) {
@@ -60,13 +59,12 @@ export class HomeComponent {
           console.error("An error occurred:", error);
         },
         () => {
-          console.log("Done");
+          this.isLoading=true
         }
       );
     }else{
       this.isOpen = true
     }
-    this.isLoading = false
   }
 
   toggleComponent() {
