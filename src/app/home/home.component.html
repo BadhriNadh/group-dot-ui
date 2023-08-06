@@ -1,15 +1,21 @@
 <!-- home.component.html -->
 <div class="container">
-    <h1>Join Chat</h1>
+    <h1>Group-dots</h1>
     <input type="text" id="name-input" placeholder="Enter your name" #name>
     <br>
     <input type="text" id="room-id-input" placeholder="Enter room ID" #roomId>
     <br>
     <button id="join-button" (click)="joinChat(name.value, roomId.value)">Join</button>
     <br>
-    <button id="create-button" (click)="createChat(name.value)">Create</button>
+    <button id="create-button" (click)="createChat(name.value, roomId.value)">Create</button>
 <!--    <br>-->
 <!--    <button id="subscribe-button" (click)="toggleComponent()" >Subscribe</button>-->
 
     <app-subscribecard *ngIf="isOpen"></app-subscribecard>
+  <div class="loading-overlay" *ngIf="isLoading">
+      <div class="loading-circle">
+        <div class="loader"></div>
+      </div>
+  </div>
+
 </div>

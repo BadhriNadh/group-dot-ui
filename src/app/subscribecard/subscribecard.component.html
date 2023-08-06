@@ -1,11 +1,9 @@
 <div class="overlay-container">
   <div class="card">
-    <div class="card-body">
-      <input type="text" placeholder="email" #contact>
-      <div class ="button-container">
-        <button id = "invite-button" (click)="invite(contact.value)">Subscribe</button>
-        <button id = "cancel-button" (click)="cancel()">Cancel</button>
-      </div>
-    </div>
+<!--    <div class="card-body">-->
+      <span id = "message-text">Join: Name and valid Room Id <br>(or)<br> Create: Name only</span>
+      <br>
+      <button id = "cancel-button" (click)="cancel()">Cancel</button>
+<!--    </div>-->
   </div>
 </div>

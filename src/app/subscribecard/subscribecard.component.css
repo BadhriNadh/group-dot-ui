@@ -22,23 +22,23 @@
   flex-direction: column;
 }
 
-input[type="text"] {
-  padding: 1.6vh 2.4vw;
-  margin-bottom: 1vh;
-  border: none;
-  border-radius: 2vw;
-  color: #222;
-  font-weight: bold;
-  font-size: 2vh;
-  background-color: #fff;
-}
+/*input[type="text"] {*/
+/*  padding: 1.6vh 2.4vw;*/
+/*  margin-bottom: 1vh;*/
+/*  border: none;*/
+/*  border-radius: 2vw;*/
+/*  color: #222;*/
+/*  font-weight: bold;*/
+/*  font-size: 2vh;*/
+/*  background-color: #fff;*/
+/*}*/
 
-.button-container {
-  display: flex;
-}
+/*.button-container {*/
+/*  display: flex;*/
+/*}*/
 
 button {
-  padding: 1.6vh 3.2vw;
+  padding: 0.8vh 1.6vw;
   border: none;
   border-radius: 2vw;
   color: #fff;
@@ -47,20 +47,24 @@ button {
   margin-top: 1vh;
 }
 
-#invite-button {
-  background-color: #0084ff;
-  margin-right: auto;
-}
+/*#invite-button {*/
+/*  background-color: #0084ff;*/
+/*  margin-right: auto;*/
+/*}*/
 
-#invite-button:hover {
-  background-color: #005cbf;
-}
+/*#invite-button:hover {*/
+/*  background-color: #005cbf;*/
+/*}*/
 
 #cancel-button {
   background-color: #f54747;
-  margin-left: auto;
 }
 
 #cancel-button:hover {
   background-color: #c62929;
+}
+
+#message-text{
+  font-size: 2vh;
+  font-weight: bold;
 }
