@@ -1,27 +1,23 @@
 # group-dots
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+[GroupDots](https://group-dot-ui-htnf5ny6tq-wl.a.run.app)    
+[group-dots-ui](https://github.com/BadhriNadh/group-dots-api)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+group-dots is a feature-rich chat room application designed to provide seamless and efficient communication among users in group settings. Whether you're looking to chat with friends, collaborate with colleagues, or engage in discussions within project teams, group-dots offers a secure and user-friendly platform to enhance your group communication experience.
 
-## Code scaffolding
+## Key Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Create and Join Chat Rooms**: Users can easily create chat rooms by providing a name. Upon creation, a unique four-letter alphanumeric key is assigned to the room. This key can be shared with others to facilitate room access.
 
-## Build
+- **Real-time Conversations**: Engage in real-time conversations within chat rooms. Stay connected and interact with other users seamlessly.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Language Translation Integration**: A standout feature of group-dots is its language translation integration. Users can translate their messages into four different languages before broadcasting them to the room, breaking down language barriers.
 
-## Running unit tests
+- **Isolated Conversations**: Ensure privacy and isolation within multiple chat rooms. Each room maintains separate conversations, making sure that discussions are contained within their intended context.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Target Audience
 
-## Running end-to-end tests
+group-dots is ideal for individuals and groups seeking a convenient and secure platform for real-time communication. It caters to a wide range of scenarios, including casual conversations among friends, professional collaboration with colleagues, and focused discussions within project teams.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Join us in revolutionizing the way you communicate and collaborate. Experience group-dots today!
